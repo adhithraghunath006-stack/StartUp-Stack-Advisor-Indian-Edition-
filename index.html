@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Startup Stack Advisor India</title>
+
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+    font-family: 'Segoe UI';
+    background: linear-gradient(135deg,#141e30,#243b55);
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 42px;
+    margin-top: 30px;
+    letter-spacing: 2px;
+}
+
+p { opacity: 0.7; }
+
+.container { margin-top: 30px; }
+
+select, button {
+    padding: 12px;
+    margin: 10px;
+    border-radius: 12px;
+    border: none;
+}
+
+button {
+    background: linear-gradient(45deg,#ff512f,#dd2476);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px #ff512f;
+}
+
+.card {
+    margin: 30px auto;
+    padding: 25px;
+    width: 65%;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 25px rgba(0,0,0,0.5);
+    text-align: left;
+}
+.card h2, .card h3 { color: #ff9f43; }
+</style>
+
+</head>
+
+<body>
+
+<h1>🚀 Startup Stack Advisor (India Edition)</h1>
+<p>Designed by Adhith R Nair</p>
+
+<div class="container">
+
+<select id="stage">
+<option>Idea</option>
+<option>MVP</option>
+<option>Scaling</option>
+</select>
+
+<select id="budget">
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+</select>
+
+<select id="sector">
+<option>Fintech</option>
+<option>Edtech</option>
+<option>Health</option>
+<option>Ecommerce</option>
+<option>SaaS</option>
+</select>
+
+<br>
+<button onclick="getStack()">Generate Stack</button>
+
+<div id="result"></div>
+
+</div>
+
+<!-- RESEARCH -->
+<div class="card">
+<h3>📚 Real Startup References</h3>
+Razorpay → Uses AWS + Java for payment reliability<br>
+Zomato → Uses Node.js + React for fast UI delivery<br>
+Practo → Uses microservices + Java for healthcare systems
+</div>
+
+<!-- DECISION LOG -->
+<div class="card">
+<h3>📝 Build Decisions</h3>
+1. Firebase used to reduce backend effort in early stage<br>
+2. AWS used only in scaling due to cost concerns<br>
+3. Razorpay selected for UPI-first Indian market<br>
+4. Monolith preferred initially for faster debugging<br>
+5. Airtable used in no-backend case for speed<br>
+6. React avoided due to assignment constraint<br>
+7. India integrations prioritized<br>
+8. Complexity added only when required
+</div>
+
+<script>
+function getStack() {
+
+    let stage = document.getElementById("stage").value;
+    let budget = document.getElementById("budget").value;
+    let sector = document.getElementById("sector").value;
+
+    let output = "";
+
+    if(stage==="Idea" && budget==="Low" && sector==="Fintech"){
+        output = `<div class="card">
+        <h2>💡 Lean Fintech Setup</h2>
+        Hosting: Vercel<br>
+        Backend: Firebase (reduces dev time ~70%)<br>
+        Payments: Razorpay (UPI ready)<br>
+        Cost: ₹0-1500/month<br>
+        Reason: Fastest launch for validation<br>
+        ⚠ Risk: May fail under heavy load
+        </div>`;
+    }
+
+    else if(stage==="MVP" && budget==="Medium" && sector==="Edtech"){
+        output = `<div class="card">
+        <h2>📚 Edtech Growth Stack</h2>
+        AWS + Node.js + MongoDB<br>
+        DigiLocker integration possible<br>
+        Cost: ₹2000-5000/month<br>
+        Reason: Flexible content delivery system<br>
+        ⚠ Risk: Requires dev expertise
+        </div>`;
+    }
+
+    else if(stage==="Scaling" && budget==="High" && sector==="Health"){
+        output = `<div class="card">
+        <h2> HealthTech Infra</h2>
+        AWS + Kubernetes + Java<br>
+        ABDM integration supported<br>
+        Cost: ₹10000+/month<br>
+        Reason: Needed for compliance & scale<br>
+        ⚠ Risk: High infra cost
+        </div>`;
+    }
+
+    else if(stage==="Idea" && budget==="Low" && sector==="SaaS"){
+        output = `<div class="card">
+        <h2 No Backend Strategy</h2>
+        Airtable + APIs<br>
+        Auth via Auth0<br>
+        Cost: ₹0-1000/month<br>
+        Reason: Ultra fast prototype building<br>
+        ⚠ Risk: Limited customization
+        </div>`;
+    }
+
+    else if(stage==="MVP" && budget==="Medium" && sector==="Ecommerce"){
+        output = `<div class="card">
+        <h2> Ecommerce Stack</h2>
+        Shopify + Razorpay (UPI)<br>
+        Cost: ₹3000+/month<br>
+        Reason: Faster go-to-market<br>
+        ⚠ Risk: Vendor lock-in
+        </div>`;
+    }
+
+    else {
+        output = `<div class="card">
+        <h2> WhatsApp-first Startup (Unique Case)</h2>
+        No app, only WhatsApp API + backend<br>
+        Cost: ₹500-2000/month<br>
+        Reason: India mein WhatsApp adoption high hai<br>
+        ⚠ Risk: Limited UI control
+        </div>`;
+    }
+
+    document.getElementById("result").innerHTML = output;
+}
+</script>
+
+</body>
+</html>
