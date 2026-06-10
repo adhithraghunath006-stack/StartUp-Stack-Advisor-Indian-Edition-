@@ -47,6 +47,9 @@ The internal logic functions under strict production-grade parameters:
 > 💡 **Fallback Logic:** For unmapped complex permutations, the system generates a **WhatsApp-first business workflow** leveraging high-adoption instant communication networks in India to validate market demand with low tech debt.
 
 ---
+## ScreenShot
+
+<img width="1920" height="1080" alt="Screenshot (336)" src="https://github.com/user-attachments/assets/bf7db353-4499-430c-a31d-f6df0d785024" />
 
 ## 🚀 How to Run the Project Locally
 
